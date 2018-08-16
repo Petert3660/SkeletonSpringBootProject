@@ -13,8 +13,8 @@ buildscript {
     }
 }
 
-def projectName = "SkeletonSpringBootWebProject"
-def projectTitle = "Skeleton Spring Boot Web Project"
+def projectName = "SkeletonSpringBootProject"
+def projectTitle = "Skeleton Spring Boot Project"
 def version = "1.0"
 
 apply plugin: 'java'
