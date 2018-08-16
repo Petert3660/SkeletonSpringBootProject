@@ -1,34 +1,115 @@
-plugins {
-    id 'org.springframework.boot' version '1.5.9.RELEASE'
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+        classpath ("io.spring.gradle:dependency-management-plugin:0.5.6.RELEASE")
+        classpath("com.querydsl:querydsl-apt:4.1.2:jpa")
+        classpath("mysql:mysql-connector-java:8.0.11")
+    }
 }
 
-group 'com.thehutgroup'
-version '1.0'
+def projectName = "SkeletonSpringBootWebProject"
+def projectTitle = "Skeleton Spring Boot Web Project"
+def version = "1.0"
 
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
-
-sourceCompatibility = 1.8
+apply plugin: 'io.spring.dependency-management'
 
 repositories {
     mavenCentral()
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 dependencies {
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.apache.tomcat.embed:tomcat-embed-el")
+    compile("org.hibernate.validator:hibernate-validator")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework:spring-jdbc")
+    compile("com.h2database:h2")
+    compile("com.querydsl:querydsl-apt:4.1.2:jpa")
 
-    compile(
-            [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.9.RELEASE'],
-            [group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.9.RELEASE'],
-            [group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.9.RELEASE'],
-            [group: 'commons-lang', name: 'commons-lang', version: '2.6'],
-            [group: 'commons-io', name: 'commons-io', version: '2.6']
-    )
+    compile("mysql:mysql-connector-java:8.0.11")
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile("junit:junit:4.12")
+    testCompile("org.mockito:mockito-core:2.1.0")
+    testCompile("org.powermock:powermock-module-junit4:1.7.0RC2")
+    testCompile("org.powermock:powermock-api-mockito2:1.7.0RC2")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.springframework.security:spring-security-test")
 }
 
-jar {
+def generatedSources = "src/main/generated"
+def generatedOutputDir = file("$generatedSources")
+
+def jenkins = "C:/Program Files (x86)/Jenkins/workspace"
+def testEnvironment = "C:/PTConsultancy/LocalTestEnvironment"
+def testDir = "${testEnvironment}/${projectName}"
+def buildDir = "${jenkins}/${projectName}"
+def localBuildDir = "C:/GradleTutorials/${projectName}"
+
+compileJava() {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    doFirst {
+        delete generatedOutputDir
+        generatedOutputDir.mkdirs()
+        options.compilerArgs = [
+                '-s', "${generatedOutputDir.getAbsolutePath()}"
+        ]
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += generatedOutputDir
+        }
+    }
+}
+
+bootJar {
     manifest {
-        attributes 'Main-Class': 'com.thehutgroup.Application'
+        attributes 'Implementation-Title': projectTitle,
+                'Implementation-Version': version
+    }
+}
+
+task setBuildPaths {
+    println "Setting up test environment"
+
+    println "Jenkins directory - ${jenkins}"
+    println "Build directory - ${buildDir}"
+
+    delete fileTree("${testDir}")
+    file("${testDir}").mkdirs()
+}
+
+task copyFiles(dependsOn: test) {
+    doLast {
+        println "Copying files to testEnvironment now"
+        copy {
+            from file("${buildDir}/build/libs")
+            include "*.jar"
+            into file("${testEnvironment}/${projectName}")
+        }
+
+        def runnableFile = "${projectName}.jar"
+        new File("${testEnvironment}/${projectName}/run.bat").text = """
+start /min java -jar $runnableFile
+"""
     }
 }
