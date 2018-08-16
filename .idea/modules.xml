@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TemplateSpringBootProject.iml" filepath="$PROJECT_DIR$/.idea/modules/TemplateSpringBootProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TemplateSpringBootProject_main.iml" filepath="$PROJECT_DIR$/.idea/modules/TemplateSpringBootProject_main.iml" group="TemplateSpringBootProject" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TemplateSpringBootProject_test.iml" filepath="$PROJECT_DIR$/.idea/modules/TemplateSpringBootProject_test.iml" group="TemplateSpringBootProject" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SkeletonSpringBootProject.iml" filepath="$PROJECT_DIR$/.idea/modules/SkeletonSpringBootProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SkeletonSpringBootProject_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SkeletonSpringBootProject_main.iml" group="SkeletonSpringBootProject" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SkeletonSpringBootProject_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SkeletonSpringBootProject_test.iml" group="SkeletonSpringBootProject" />
     </modules>
   </component>
 </project>

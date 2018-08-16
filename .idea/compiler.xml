@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
+      <module name="SkeletonSpringBootProject_main" target="1.8" />
+      <module name="SkeletonSpringBootProject_test" target="1.8" />
       <module name="TemplateSpringBootProject_main" target="1.8" />
       <module name="TemplateSpringBootProject_test" target="1.8" />
     </bytecodeTargetLevel>
