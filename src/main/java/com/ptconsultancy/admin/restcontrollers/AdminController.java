@@ -18,7 +18,7 @@ public class AdminController {
         this.messageHandler = messageHandler;
     }
 
-    @RequestMapping(path="/healthcheck", method= RequestMethod.GET)
+    @RequestMapping(path="/healthcheck", method=RequestMethod.GET)
     public String healthcheck() {
         return "Running OK";
     }
