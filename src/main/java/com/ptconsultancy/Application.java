@@ -49,8 +49,8 @@ public class Application implements CommandLineRunner {
         String hostname = env.getProperty(SERVER_HOST) + ":";
         String serverPort = env.getProperty(SERVER_PORT_PROPERTY);
         System.out.println("************************************************************************");
-        if (BuildVersion.getBuildVersion() != null) {
-            System.out.println("* AddressApi, Version: " + BuildVersion.getBuildVersion());
+        if (BuildVersion.getProjectTitle() != null && BuildVersion.getBuildVersion() != null) {
+            System.out.println("* " + BuildVersion.getProjectTitle() + ", Version: " + BuildVersion.getBuildVersion());
             System.out.println("************************************************************************");
         }
         if (BuildVersion.getProjectTitle() != null) {
