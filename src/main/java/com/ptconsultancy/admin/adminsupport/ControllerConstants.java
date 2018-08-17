@@ -7,4 +7,5 @@ public class ControllerConstants {
     public static final String PASS_KEY = "auth.admin.password";
     public static final int TOKEN_LENGTH = 20;
     public static final int TOKEN_MODE = 1;
+    public static final String NO_TOKEN_MESSAGE = "Cannot issue a new token";
 }

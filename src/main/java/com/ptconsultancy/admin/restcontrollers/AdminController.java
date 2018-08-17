@@ -17,6 +17,8 @@ public class AdminController {
 
     private String lastSecurityToken;
 
+    private boolean tokenLock = false;
+
     @Autowired
     public AdminController(MessageHandler messageHandler) {
         this.messageHandler = messageHandler;
@@ -31,9 +33,11 @@ public class AdminController {
         }
     }
 
-    @RequestMapping(path="/shutdown/{id}/{pass}", method=RequestMethod.POST)
-    public void shutdown(@PathVariable String id, @PathVariable String pass) {
-        if (id.equals(messageHandler.getMessage(ControllerConstants.ID_KEY)) && pass.equals(messageHandler.getMessage(ControllerConstants.PASS_KEY))) {
+    @RequestMapping(path="/shutdown/{id}/{pass}/{token}", method=RequestMethod.POST)
+    public void shutdown(@PathVariable String id, @PathVariable String pass, @PathVariable String token) {
+        if (id.equals(messageHandler.getMessage(ControllerConstants.ID_KEY)) && pass.equals(messageHandler.getMessage(ControllerConstants.PASS_KEY))
+            && token.equals(lastSecurityToken)) {
+            tokenLock = false;
             System.exit(ControllerConstants.EXIT_STATUS);
         }
     }
@@ -41,7 +45,12 @@ public class AdminController {
     @RequestMapping(path="/securitytoken", method=RequestMethod.GET)
     public String getSecurityToken() {
 
-        lastSecurityToken = GenerateRandomKeys.generateRandomKey(ControllerConstants.TOKEN_LENGTH, ControllerConstants.TOKEN_MODE);
-        return lastSecurityToken;
+        if (!tokenLock) {
+            lastSecurityToken = GenerateRandomKeys.generateRandomKey(ControllerConstants.TOKEN_LENGTH, ControllerConstants.TOKEN_MODE);
+            tokenLock = true;
+            return lastSecurityToken;
+        } else {
+            return ControllerConstants.NO_TOKEN_MESSAGE;
+        }
     }
 }
