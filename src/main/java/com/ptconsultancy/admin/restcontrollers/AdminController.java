@@ -1,5 +1,6 @@
 package com.ptconsultancy.admin.restcontrollers;
 
+import com.ptconsultancy.admin.adminsupport.BuildVersion;
 import com.ptconsultancy.admin.adminsupport.ControllerConstants;
 import com.ptconsultancy.messages.MessageHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,11 @@ public class AdminController {
 
     @RequestMapping(path="/healthcheck", method=RequestMethod.GET)
     public String healthcheck() {
-        return "Running OK";
+        if (BuildVersion.getProjectTitle() != null) {
+            return BuildVersion.getProjectTitle() + " is running OK";
+        } else {
+            return "Application is running OK";
+        }
     }
 
     @RequestMapping(path="/shutdown/{id}/{pass}", method=RequestMethod.POST)
