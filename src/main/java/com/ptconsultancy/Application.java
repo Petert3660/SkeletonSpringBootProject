@@ -51,7 +51,11 @@ public class Application implements CommandLineRunner {
             System.out.println("* AddressApi, Version: " + BuildVersion.getBuildVersion());
             System.out.println("************************************************************************");
         }
-        System.out.println("* AddressApi is now running on:- localhost:" + serverPort);
+        if (BuildVersion.getProjectTitle() != null) {
+            System.out.println("* This application is now running on:- localhost:" + serverPort);
+        } else {
+            System.out.println("* " + BuildVersion.getProjectTitle() + " is now running on:- localhost:" + serverPort);
+        }
         System.out.println("************************************************************************");
     }
 }
