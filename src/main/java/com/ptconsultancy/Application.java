@@ -1,5 +1,6 @@
 package com.ptconsultancy;
 
+import com.ptconsultancy.admin.adminsupport.BuildVersion;
 import com.ptconsultancy.messages.MessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.core.env.Environment;
 
 /**
  * Created by Peter Thomson on 13/04/2018.
@@ -23,6 +25,9 @@ public class Application implements CommandLineRunner {
     private static final int EXIT_STATUS = 0;
 
     @Autowired
+    private Environment env;
+
+    @Autowired
     MessageHandler messageHandler;
 
     public static void main(String[] args) {
@@ -34,8 +39,18 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
-        System.out.println("This is a working program - replace this code with your own code to create required Application!");
-        System.out.println("EXITING NOW!");
+        outputMessage();
         System.exit(EXIT_STATUS);
+    }
+
+    private void outputMessage() {
+        String serverPort = env.getProperty("server.port");
+        System.out.println("************************************************************************");
+        if (BuildVersion.getBuildVersion() != null) {
+            System.out.println("* AddressApi, Version: " + BuildVersion.getBuildVersion());
+            System.out.println("************************************************************************");
+        }
+        System.out.println("* AddressApi is now running on:- localhost:" + serverPort);
+        System.out.println("************************************************************************");
     }
 }
