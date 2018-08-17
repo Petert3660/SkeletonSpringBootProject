@@ -46,16 +46,17 @@ public class Application implements CommandLineRunner {
     }
 
     private void outputMessage() {
-        String serverPort = env.getProperty("server.port");
+        String hostname = env.getProperty(SERVER_HOST) + ":";
+        String serverPort = env.getProperty(SERVER_PORT_PROPERTY);
         System.out.println("************************************************************************");
         if (BuildVersion.getBuildVersion() != null) {
             System.out.println("* AddressApi, Version: " + BuildVersion.getBuildVersion());
             System.out.println("************************************************************************");
         }
         if (BuildVersion.getProjectTitle() != null) {
-            System.out.println("* " + BuildVersion.getProjectTitle() + " is now running on:- " + SERVER_HOST + ":" + serverPort);
+            System.out.println("* " + BuildVersion.getProjectTitle() + " is now running on:- " + hostname + serverPort);
         } else {
-            System.out.println("* This application is now running on:- " + SERVER_HOST + ":" + serverPort);
+            System.out.println("* This application is now running on:- " + hostname + serverPort);
         }
         System.out.println("************************************************************************");
     }
