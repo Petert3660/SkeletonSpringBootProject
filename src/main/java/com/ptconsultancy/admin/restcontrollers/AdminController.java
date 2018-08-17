@@ -53,4 +53,24 @@ public class AdminController {
             return ControllerConstants.NO_TOKEN_MESSAGE;
         }
     }
+
+    @RequestMapping(path="getadminid/{token}", method=RequestMethod.GET)
+    public String getAdminId(@PathVariable String token) {
+        if (token.equals(securityToken.getValue())) {
+            securityToken.setTokenLock(false);
+            return messageHandler.getMessage(ControllerConstants.ID_KEY);
+        } else {
+            return ControllerConstants.NO_TOKEN_MESSAGE;
+        }
+    }
+
+    @RequestMapping(path="getadminpass/{token}", method=RequestMethod.GET)
+    public String getAdminPass(@PathVariable String token) {
+        if (token.equals(securityToken.getValue())) {
+            securityToken.setTokenLock(false);
+            return messageHandler.getMessage(ControllerConstants.PASS_KEY);
+        } else {
+            return ControllerConstants.NO_TOKEN_MESSAGE;
+        }
+    }
 }
