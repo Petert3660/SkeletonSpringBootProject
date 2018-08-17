@@ -2,6 +2,7 @@ package com.ptconsultancy.admin.restcontrollers;
 
 import com.ptconsultancy.admin.adminsupport.BuildVersion;
 import com.ptconsultancy.admin.adminsupport.ControllerConstants;
+import com.ptconsultancy.admin.security.SecurityToken;
 import com.ptconsultancy.messages.MessageHandler;
 import com.ptconsultancy.utilities.GenerateRandomKeys;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,12 @@ public class AdminController {
 
     private MessageHandler messageHandler;
 
-    private String lastSecurityToken;
-
-    private boolean tokenLock = false;
+    private SecurityToken securityToken;
 
     @Autowired
-    public AdminController(MessageHandler messageHandler) {
+    public AdminController(MessageHandler messageHandler, SecurityToken securityToken) {
         this.messageHandler = messageHandler;
+        this.securityToken = securityToken;
     }
 
     @RequestMapping(path="/healthcheck", method=RequestMethod.GET)
@@ -36,8 +36,8 @@ public class AdminController {
     @RequestMapping(path="/shutdown/{id}/{pass}/{token}", method=RequestMethod.POST)
     public void shutdown(@PathVariable String id, @PathVariable String pass, @PathVariable String token) {
         if (id.equals(messageHandler.getMessage(ControllerConstants.ID_KEY)) && pass.equals(messageHandler.getMessage(ControllerConstants.PASS_KEY))
-            && token.equals(lastSecurityToken)) {
-            tokenLock = false;
+            && token.equals(securityToken.getValue())) {
+            securityToken.setTokenLock(false);
             System.exit(ControllerConstants.EXIT_STATUS);
         }
     }
@@ -45,10 +45,10 @@ public class AdminController {
     @RequestMapping(path="/securitytoken", method=RequestMethod.GET)
     public String getSecurityToken() {
 
-        if (!tokenLock) {
-            lastSecurityToken = GenerateRandomKeys.generateRandomKey(ControllerConstants.TOKEN_LENGTH, ControllerConstants.TOKEN_MODE);
-            tokenLock = true;
-            return lastSecurityToken;
+        if (!securityToken.isTokenLock()) {
+            securityToken.setValue(GenerateRandomKeys.generateRandomKey(ControllerConstants.TOKEN_LENGTH, ControllerConstants.TOKEN_MODE));
+            securityToken.setTokenLock(true);
+            return securityToken.getValue();
         } else {
             return ControllerConstants.NO_TOKEN_MESSAGE;
         }
