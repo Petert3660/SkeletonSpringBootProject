@@ -3,6 +3,7 @@ package com.ptconsultancy.admin.restcontrollers;
 import com.ptconsultancy.admin.adminsupport.BuildVersion;
 import com.ptconsultancy.admin.adminsupport.ControllerConstants;
 import com.ptconsultancy.messages.MessageHandler;
+import com.ptconsultancy.utilities.GenerateRandomKeys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
 
     private MessageHandler messageHandler;
+
+    private String lastSecurityToken;
 
     @Autowired
     public AdminController(MessageHandler messageHandler) {
@@ -33,5 +36,12 @@ public class AdminController {
         if (id.equals(messageHandler.getMessage(ControllerConstants.ID_KEY)) && pass.equals(messageHandler.getMessage(ControllerConstants.PASS_KEY))) {
             System.exit(ControllerConstants.EXIT_STATUS);
         }
+    }
+
+    @RequestMapping(path="/securitytoken", method=RequestMethod.GET)
+    public String getSecurityToken() {
+
+        lastSecurityToken = GenerateRandomKeys.generateRandomKey(ControllerConstants.TOKEN_LENGTH, ControllerConstants.TOKEN_MODE);
+        return lastSecurityToken;
     }
 }
