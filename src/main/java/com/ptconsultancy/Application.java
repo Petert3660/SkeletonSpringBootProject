@@ -21,6 +21,7 @@ public class Application implements CommandLineRunner {
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
     private static final String PROPS_FILENAME = "application";
+    private static final String SERVER_HOST = "spring.data.rest.base-path";
     private static final String SERVER_PORT_PROPERTY = "server.port";
 
     private static final int EXIT_STATUS = 0;
@@ -52,9 +53,9 @@ public class Application implements CommandLineRunner {
             System.out.println("************************************************************************");
         }
         if (BuildVersion.getProjectTitle() != null) {
-            System.out.println("* This application is now running on:- localhost:" + serverPort);
+            System.out.println("* " + BuildVersion.getProjectTitle() + " is now running on:- " + SERVER_HOST + ":" + serverPort);
         } else {
-            System.out.println("* " + BuildVersion.getProjectTitle() + " is now running on:- localhost:" + serverPort);
+            System.out.println("* This application is now running on:- " + SERVER_HOST + ":" + serverPort);
         }
         System.out.println("************************************************************************");
     }
