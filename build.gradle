@@ -83,7 +83,7 @@ sourceSets {
 
 bootJar {
     manifest {
-        attributes 'Implementation-Title': projectTitle,
+        attributes 'Implementation-Title': projectName,
                 'Implementation-Version': version
     }
 }
