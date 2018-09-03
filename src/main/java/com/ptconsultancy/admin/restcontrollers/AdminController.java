@@ -72,27 +72,30 @@ public class AdminController {
 
     @RequestMapping(path="getadminid/{token}", method=RequestMethod.GET)
     public String getAdminId(@PathVariable String token) {
-        if (adminidToggle) {
-            if (token.equals(securityTokenManager.getValueWithReset())) {
+
+        if (token.equals(securityTokenManager.getValueWithReset())) {
+            if (adminidToggle) {
                 return messageHandler.getMessage(ControllerConstants.ID_KEY);
             } else {
-                return ControllerConstants.NO_TOKEN_MESSAGE;
+                return CREDS_DISABLED_MESSAGE;
             }
         } else {
-            return CREDS_DISABLED_MESSAGE;
+            return ControllerConstants.NO_TOKEN_MESSAGE;
         }
     }
 
+
     @RequestMapping(path="getadminpass/{token}", method=RequestMethod.GET)
     public String getAdminPass(@PathVariable String token) {
-        if (adminpassToggle) {
-            if (token.equals(securityTokenManager.getValueWithReset())) {
+
+        if (token.equals(securityTokenManager.getValueWithReset())) {
+            if (adminpassToggle) {
                 return messageHandler.getMessage(ControllerConstants.PASS_KEY);
             } else {
-                return ControllerConstants.NO_TOKEN_MESSAGE;
+                return CREDS_DISABLED_MESSAGE;
             }
         } else {
-            return CREDS_DISABLED_MESSAGE;
+            return ControllerConstants.NO_TOKEN_MESSAGE;
         }
     }
 }
