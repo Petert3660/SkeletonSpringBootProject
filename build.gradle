@@ -40,6 +40,7 @@ dependencies {
     compile("org.springframework:spring-jdbc")
     compile("com.h2database:h2")
     compile("com.querydsl:querydsl-apt:4.1.2:jpa")
+    compile files("C:/Users/thomsonp/.m2/repository/ptconsultancy/Domain/Domain.jar")
 
     compile("mysql:mysql-connector-java:8.0.11")
 
