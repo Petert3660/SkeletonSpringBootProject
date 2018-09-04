@@ -16,6 +16,7 @@ public class AdminController {
 
     private static final String ADMINID_TOGGLE = "adminid.allowed";
     private static final String ADMINPASS_TOGGLE = "adminpass.allowed";
+    private static final String SHUTDOWN_TOGGLE = "shutdown.allowed";
 
     private static final String CREDS_DISABLED_MESSAGE = "This facility has been disabled";
 
@@ -27,6 +28,7 @@ public class AdminController {
 
     private boolean adminidToggle = false;
     private boolean adminpassToggle = false;
+    private boolean shutdownToggle = false;
 
     @Autowired
     public AdminController(MessageHandler messageHandler, SecurityTokenManager securityTokenManager, Environment env) {
@@ -38,6 +40,9 @@ public class AdminController {
         }
         if (this.env.getProperty(ADMINPASS_TOGGLE).equals("true")) {
             adminpassToggle = true;
+        }
+        if (this.env.getProperty(SHUTDOWN_TOGGLE).equals("true")) {
+            shutdownToggle = true;
         }
     }
 
@@ -53,8 +58,8 @@ public class AdminController {
     @RequestMapping(path="/shutdown/{id}/{pass}/{token}", method=RequestMethod.POST)
     public void shutdown(@PathVariable String id, @PathVariable String pass, @PathVariable String token) {
         if (id.equals(messageHandler.getMessage(ControllerConstants.ID_KEY)) && pass.equals(messageHandler.getMessage(ControllerConstants.PASS_KEY))
-            && token.equals(securityTokenManager.getValueWithReset())) {
-
+            && shutdownToggle) {
+            securityTokenManager.resetToken();
             System.exit(ControllerConstants.EXIT_STATUS);
         }
     }
@@ -73,7 +78,8 @@ public class AdminController {
     @RequestMapping(path="getadminid/{token}", method=RequestMethod.GET)
     public String getAdminId(@PathVariable String token) {
 
-        if (token.equals(securityTokenManager.getValueWithReset())) {
+        if (token.equals(securityTokenManager.getValue())) {
+            securityTokenManager.resetToken();
             if (adminidToggle) {
                 return messageHandler.getMessage(ControllerConstants.ID_KEY);
             } else {
@@ -88,7 +94,8 @@ public class AdminController {
     @RequestMapping(path="getadminpass/{token}", method=RequestMethod.GET)
     public String getAdminPass(@PathVariable String token) {
 
-        if (token.equals(securityTokenManager.getValueWithReset())) {
+        if (token.equals(securityTokenManager.getValue())) {
+            securityTokenManager.resetToken();
             if (adminpassToggle) {
                 return messageHandler.getMessage(ControllerConstants.PASS_KEY);
             } else {
