@@ -56,7 +56,7 @@ public class AdminController {
     }
 
     @RequestMapping(path="/shutdown/{id}/{pass}", method=RequestMethod.POST)
-    public void shutdown(@PathVariable String id, @PathVariable String pass, @PathVariable String token) {
+    public void shutdown(@PathVariable String id, @PathVariable String pass) {
         if (id.equals(messageHandler.getMessage(ControllerConstants.ID_KEY)) && pass.equals(messageHandler.getMessage(ControllerConstants.PASS_KEY))
             && shutdownToggle) {
             securityTokenManager.resetToken();
