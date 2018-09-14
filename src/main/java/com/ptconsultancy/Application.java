@@ -1,7 +1,6 @@
 package com.ptconsultancy;
 
 import com.ptconsultancy.admin.adminsupport.BuildVersion;
-import com.ptconsultancy.admin.adminsupport.ControllerConstants;
 import com.ptconsultancy.messages.MessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +41,6 @@ public class Application implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         outputMessage();
-        System.exit(ControllerConstants.EXIT_STATUS);
     }
 
     private void outputMessage() {
