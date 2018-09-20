@@ -1,7 +1,7 @@
 package com.ptconsultancy.admin.security;
 
 import com.ptconsultancy.admin.adminsupport.ControllerConstants;
-import com.ptconsultancy.utilities.GenerateRandomKeys;
+import com.ptconsultancy.domain.utilities.GenerateRandomKeys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
