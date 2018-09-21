@@ -41,6 +41,7 @@ public class Application implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         outputMessage();
+        populateDatabase();
     }
 
     private void outputMessage() {
@@ -57,5 +58,22 @@ public class Application implements CommandLineRunner {
             System.out.println("* This application is now running on:- " + hostname + serverPort);
         }
         System.out.println("************************************************************************");
+    }
+
+    // Use this method to set up test data from the application.properties file
+    private void populateDatabase() {
+
+//        if (customerRepository.findCustomerById((long) 11111).size() == 0) {
+//            String prop;
+//            int i = 1;
+//            do {
+//                String address = "customer" + String.valueOf(i++);
+//                prop = env.getProperty(address);
+//                if (!StringUtils.isEmpty(prop)) {
+//                    String[] custDetails = prop.split(", ");
+//                    customerRepository.save(new Customer(Long.parseLong(custDetails[0]), custDetails[1], custDetails[2], new Address()));
+//                }
+//            } while (!StringUtils.isEmpty(prop));
+//        }
     }
 }
