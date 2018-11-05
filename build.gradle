@@ -15,7 +15,7 @@ buildscript {
 
 def projectName = "SkeletonSpringBootProject"
 def projectTitle = "Skeleton Spring Boot Project"
-def version = "1.0"
+def version = "1.02"
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
