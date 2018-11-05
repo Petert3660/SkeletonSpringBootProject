@@ -1,5 +1,7 @@
 package com.ptconsultancy;
 
+import static com.ptconsultancy.application.ApplicationConstants.GET_ADMIN_ID;
+import static com.ptconsultancy.application.ApplicationConstants.GET_ADMIN_PASSWORD;
 import static com.ptconsultancy.application.ApplicationConstants.HEALTHCHECK;
 
 import com.ptconsultancy.admin.adminsupport.BuildVersion;
@@ -61,6 +63,8 @@ public class Application implements CommandLineRunner {
         allServices.addService(service);
         RestOperations restOperations = new RestOperations(allServices);
         System.out.println("Testing REST operations by running local healthcheck - " + restOperations.getForObject(service, HEALTHCHECK, String.class));
+        System.out.println("Testing REST operations by running local admin get userId - " + restOperations.getForObject(service, GET_ADMIN_ID, String.class));
+        System.out.println("Testing REST operations by running local admin get password - " + restOperations.getForObject(service, GET_ADMIN_PASSWORD, String.class));
         allServices.removeService("testservice");
     }
 
