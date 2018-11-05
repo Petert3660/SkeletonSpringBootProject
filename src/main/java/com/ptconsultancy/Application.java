@@ -1,6 +1,11 @@
 package com.ptconsultancy;
 
+import static com.ptconsultancy.application.ApplicationConstants.HEALTHCHECK;
+
 import com.ptconsultancy.admin.adminsupport.BuildVersion;
+import com.ptconsultancy.admin.restoperations.AllServices;
+import com.ptconsultancy.admin.restoperations.RestOperations;
+import com.ptconsultancy.admin.restoperations.Service;
 import com.ptconsultancy.messages.MessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +47,17 @@ public class Application implements CommandLineRunner {
         System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         outputMessage();
         populateDatabase();
+        testRestOperations();
+    }
+
+    private void testRestOperations() {
+        Service service = new Service("\\testservice", true);
+        service.setUrl(env.getProperty(SERVER_HOST) + ":"
+            + env.getProperty(SERVER_PORT_PROPERTY));
+        AllServices allServices = new AllServices();
+        allServices.addService(service);
+        RestOperations restOperations = new RestOperations(allServices);
+        System.out.println("Testing REST operations by running local healthcheck - " + restOperations.getForObject(service, HEALTHCHECK, String.class));
     }
 
     private void outputMessage() {

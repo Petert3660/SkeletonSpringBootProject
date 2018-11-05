@@ -18,6 +18,11 @@ public class RestOperations {
         this.allServices = allServices;
     }
 
+    public <T> T getForObject(Service service, String endpoint, Class<T> responseType) {
+        String url = getUrl(service.getName(), endpoint);
+        return restTemplate.getForObject(url, responseType);
+    }
+
     private String getSecurityToken(Service service) {
         String secureUrl = service.getUrl() + STANDARD_SEPARATOR  + SECURITY_TOKEN;
         return restTemplate.getForObject(secureUrl, String.class);
