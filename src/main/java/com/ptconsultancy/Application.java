@@ -36,6 +36,9 @@ public class Application implements CommandLineRunner {
     @Autowired
     MessageHandler messageHandler;
 
+    @Autowired
+    AllServices allServices;
+
     public static void main(String[] args) {
         new SpringApplicationBuilder(Application.class)
             .headless(false)
@@ -54,10 +57,11 @@ public class Application implements CommandLineRunner {
         Service service = new Service("\\testservice", true);
         service.setUrl(env.getProperty(SERVER_HOST) + ":"
             + env.getProperty(SERVER_PORT_PROPERTY));
-        AllServices allServices = new AllServices();
+        allServices.displayAllServices();
         allServices.addService(service);
         RestOperations restOperations = new RestOperations(allServices);
         System.out.println("Testing REST operations by running local healthcheck - " + restOperations.getForObject(service, HEALTHCHECK, String.class));
+        allServices.removeService("testservice");
     }
 
     private void outputMessage() {
