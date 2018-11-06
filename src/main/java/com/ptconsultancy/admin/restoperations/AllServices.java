@@ -3,15 +3,16 @@ package com.ptconsultancy.admin.restoperations;
 import static com.ptconsultancy.application.ApplicationConstants.SERVICES_RESOURCE_FILE;
 
 import com.ptconsultancy.domain.utilities.FileUtilities;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
@@ -48,9 +49,13 @@ public class AllServices {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
             System.out.println("In the resource loading part as we are in JAR mode!");
-            Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
-            System.out.println("Resource content length is - " + resource.contentLength());
-            return 0;
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(resourceLoader.getResource("classpath:" + SERVICES_NAME).getInputStream()));
+            String line = null;
+            int lineCount = 0;
+            while ((line = bufferedReader.readLine()) != null){
+                lineCount++;
+            }
+            return lineCount;
         }
     }
 
