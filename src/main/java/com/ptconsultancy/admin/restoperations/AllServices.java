@@ -1,10 +1,13 @@
 package com.ptconsultancy.admin.restoperations;
 
+import static com.ptconsultancy.application.ApplicationConstants.SERVICES_RESOURCE_FILE;
+
+import com.ptconsultancy.domain.utilities.FileUtilities;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Component;
@@ -12,28 +15,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class AllServices {
 
-    private static final String SERVICES_NAME = "services";
+    private static final String SERVICE_NAME = "service";
 
     private ResourceBundleMessageSource allServicesSource;
 
     Map<String, Service> allServices = new HashMap<String, Service>();
 
     @Autowired
-    public AllServices(ResourceBundleMessageSource allServicesSource) {
+    public AllServices(ResourceBundleMessageSource allServicesSource) throws IOException {
         this.allServicesSource = allServicesSource;
         this.allServicesSource.setBasename("services");
-        int i = 1;
-        String prop = "";
-        do {
-            String key = "service" + String.valueOf(i++);
-            try {
-                prop = this.allServicesSource.getMessage(key, new Object[]{}, null);
-            } catch (Exception e) {
-                break;
-            }
+        int filelength = FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
+        for (int i = 1; i <= filelength; i++) {
+            String key = SERVICE_NAME + String.valueOf(i);
+            String prop = "";
+            prop = this.allServicesSource.getMessage(key, new Object[]{}, null);
             Service service = new Service(prop, false);
             allServices.put(key, service);
-        } while (!StringUtils.isEmpty(prop));
+        }
     }
 
     public Map<String, Service> getAllServices() {

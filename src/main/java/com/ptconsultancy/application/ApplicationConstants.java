@@ -2,6 +2,8 @@ package com.ptconsultancy.application;
 
 public class ApplicationConstants {
 
+    public static final String SERVICES_RESOURCE_FILE = "./src/main/resources/services.properties";
+
     public static final String STANDARD_SEPARATOR = "/";
 
     public static final String HEALTHCHECK = "healthcheck";
