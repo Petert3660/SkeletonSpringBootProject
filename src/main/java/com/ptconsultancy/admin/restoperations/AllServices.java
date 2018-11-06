@@ -43,7 +43,7 @@ public class AllServices {
         try {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
-            File file = ResourceUtils.getFile("classpath:classes/" + SERVICES_NAME + ".properties");
+            File file = ResourceUtils.getFile("classpath:BOOT_INF/classes/" + SERVICES_NAME + ".properties");
             return FileUtilities.getFileLengthInLines(file);
         }
     }
