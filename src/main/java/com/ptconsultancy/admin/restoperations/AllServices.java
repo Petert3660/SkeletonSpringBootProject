@@ -4,6 +4,7 @@ import static com.ptconsultancy.application.ApplicationConstants.SERVICES_RESOUR
 
 import com.ptconsultancy.domain.utilities.FileUtilities;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -12,11 +13,13 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 @Component
 public class AllServices {
 
-    private static final String SERVICE_NAME = "services";
+    private static final String SERVICES_NAME = "services";
+    private static final String SERVICE = "service";
 
     private ResourceBundleMessageSource allServicesSource;
 
@@ -25,16 +28,23 @@ public class AllServices {
     @Autowired
     public AllServices(ResourceBundleMessageSource allServicesSource) throws IOException {
         this.allServicesSource = allServicesSource;
-        this.allServicesSource.setBasename("services");
-        File file = new File("test");
-        System.out.println(file.getAbsolutePath());
-        int filelength = FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
+        this.allServicesSource.setBasename(SERVICES_NAME);
+        int filelength = getResource(SERVICES_RESOURCE_FILE);
         for (int i = 1; i <= filelength; i++) {
-            String key = SERVICE_NAME + String.valueOf(i);
+            String key = SERVICE + String.valueOf(i);
             String prop = "";
             prop = this.allServicesSource.getMessage(key, new Object[]{}, null);
             Service service = new Service(prop, false);
             allServices.put(key, service);
+        }
+    }
+
+    private int getResource(String servicesResourceFile) throws IOException {
+        try {
+            return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
+        } catch (FileNotFoundException fnf) {
+            File file = ResourceUtils.getFile("classpath:" + SERVICES_NAME);
+            return FileUtilities.getFileLengthInLines(file);
         }
     }
 
