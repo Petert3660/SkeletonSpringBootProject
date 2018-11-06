@@ -35,7 +35,7 @@ public class AllServices {
         this.resourceLoader = resourceLoader;
         this.allServicesSource = allServicesSource;
         this.allServicesSource.setBasename(SERVICES_NAME);
-        int filelength = getResource();
+        int filelength = getResourceLength();
         for (int i = 1; i <= filelength; i++) {
             String key = SERVICE + String.valueOf(i);
             String prop = "";
@@ -45,7 +45,7 @@ public class AllServices {
         }
     }
 
-    private int getResource() throws IOException {
+    private int getResourceLength() throws IOException {
         try {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
