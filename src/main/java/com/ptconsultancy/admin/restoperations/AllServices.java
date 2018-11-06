@@ -3,7 +3,6 @@ package com.ptconsultancy.admin.restoperations;
 import static com.ptconsultancy.application.ApplicationConstants.SERVICES_RESOURCE_FILE;
 
 import com.ptconsultancy.domain.utilities.FileUtilities;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,8 +11,9 @@ import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ResourceUtils;
 
 @Component
 public class AllServices {
@@ -22,6 +22,9 @@ public class AllServices {
     private static final String SERVICE = "service";
 
     private ResourceBundleMessageSource allServicesSource;
+
+    @Autowired
+    ResourceLoader resourceLoader;
 
     Map<String, Service> allServices = new HashMap<String, Service>();
 
@@ -43,8 +46,8 @@ public class AllServices {
         try {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
-            File file = ResourceUtils.getFile("classpath:BOOT_INF/classes/" + SERVICES_NAME + ".properties");
-            return FileUtilities.getFileLengthInLines(file);
+            Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
+            return 0;
         }
     }
 
