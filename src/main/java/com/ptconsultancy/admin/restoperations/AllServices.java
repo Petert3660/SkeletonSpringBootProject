@@ -11,9 +11,9 @@ import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ResourceUtils;
 
 @Component
 public class AllServices {
@@ -48,7 +48,8 @@ public class AllServices {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
             System.out.println("In the resource loading part as we are in JAR mode!");
-            ResourceUtils.getURL("classpath:" + SERVICES_NAME);
+            Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
+            //resource.getURL();
             int lineCount = 0;
             return lineCount;
         }
