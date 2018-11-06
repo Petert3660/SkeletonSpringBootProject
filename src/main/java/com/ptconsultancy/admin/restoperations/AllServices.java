@@ -5,13 +5,13 @@ import static com.ptconsultancy.application.ApplicationConstants.SERVICES_RESOUR
 import com.ptconsultancy.domain.utilities.FileUtilities;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
@@ -48,8 +48,8 @@ public class AllServices {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
             System.out.println("In the resource loading part as we are in JAR mode!");
-            Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
-            resource.getURL();
+            //Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
+            InputStream inputStream = getClass().getResourceAsStream(SERVICES_NAME);
             int lineCount = 0;
             return lineCount;
         }
