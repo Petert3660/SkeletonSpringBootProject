@@ -3,6 +3,7 @@ package com.ptconsultancy.admin.restoperations;
 import static com.ptconsultancy.application.ApplicationConstants.SERVICES_RESOURCE_FILE;
 
 import com.ptconsultancy.domain.utilities.FileUtilities;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AllServices {
 
-    private static final String SERVICE_NAME = "service";
+    private static final String SERVICE_NAME = "services";
 
     private ResourceBundleMessageSource allServicesSource;
 
@@ -25,6 +26,8 @@ public class AllServices {
     public AllServices(ResourceBundleMessageSource allServicesSource) throws IOException {
         this.allServicesSource = allServicesSource;
         this.allServicesSource.setBasename("services");
+        File file = new File("test");
+        System.out.println(file.getAbsolutePath());
         int filelength = FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         for (int i = 1; i <= filelength; i++) {
             String key = SERVICE_NAME + String.valueOf(i);
