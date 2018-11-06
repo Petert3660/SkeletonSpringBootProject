@@ -51,7 +51,7 @@ public class AllServices {
         } catch (FileNotFoundException fnf) {
             System.out.println("In the resource loading part as we are in JAR mode!");
             String data = "";
-            ClassPathResource cpr = new ClassPathResource("static/file.txt");
+            ClassPathResource cpr = new ClassPathResource(SERVICES_NAME + ".properties");
             try {
                 byte[] bdata = FileCopyUtils.copyToByteArray(cpr.getInputStream());
                 data = new String(bdata, StandardCharsets.UTF_8);
