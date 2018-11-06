@@ -47,6 +47,7 @@ public class AllServices {
         try {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
+            System.out.println("In the resource loading part as we are in JAR mode!");
             Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
             return 0;
         }
