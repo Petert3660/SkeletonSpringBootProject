@@ -29,7 +29,7 @@ public class AllServices {
     public AllServices(ResourceBundleMessageSource allServicesSource) throws IOException {
         this.allServicesSource = allServicesSource;
         this.allServicesSource.setBasename(SERVICES_NAME);
-        int filelength = getResource(SERVICES_RESOURCE_FILE);
+        int filelength = getResource();
         for (int i = 1; i <= filelength; i++) {
             String key = SERVICE + String.valueOf(i);
             String prop = "";
@@ -39,11 +39,11 @@ public class AllServices {
         }
     }
 
-    private int getResource(String servicesResourceFile) throws IOException {
+    private int getResource() throws IOException {
         try {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
-            File file = ResourceUtils.getFile("classpath:" + SERVICES_NAME);
+            File file = ResourceUtils.getFile("classpath:" + SERVICES_NAME + ".properties");
             return FileUtilities.getFileLengthInLines(file);
         }
     }
