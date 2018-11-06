@@ -29,7 +29,8 @@ public class AllServices {
     Map<String, Service> allServices = new HashMap<String, Service>();
 
     @Autowired
-    public AllServices(ResourceBundleMessageSource allServicesSource) throws IOException {
+    public AllServices(ResourceBundleMessageSource allServicesSource, ResourceLoader resourceLoader) throws IOException {
+        this.resourceLoader = resourceLoader;
         this.allServicesSource = allServicesSource;
         this.allServicesSource.setBasename(SERVICES_NAME);
         int filelength = getResource();
