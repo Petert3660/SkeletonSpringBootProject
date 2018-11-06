@@ -49,7 +49,7 @@ public class AllServices {
         } catch (FileNotFoundException fnf) {
             System.out.println("In the resource loading part as we are in JAR mode!");
             Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
-            //resource.getURL();
+            resource.getURL();
             int lineCount = 0;
             return lineCount;
         }
