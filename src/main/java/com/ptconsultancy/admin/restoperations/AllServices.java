@@ -49,16 +49,8 @@ public class AllServices {
         try {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
-            System.out.println("In the resource loading part as we are in JAR mode!");
-            String data = "";
-            ClassPathResource cpr = new ClassPathResource(SERVICES_NAME + ".properties");
-            try {
-                byte[] bdata = FileCopyUtils.copyToByteArray(cpr.getInputStream());
-                data = new String(bdata, StandardCharsets.UTF_8);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return data.split("\n").length;
+            return new String(FileCopyUtils.copyToByteArray(
+                new ClassPathResource(SERVICES_NAME + ".properties").getInputStream()), StandardCharsets.UTF_8).split("\n").length;
         }
     }
 
