@@ -53,6 +53,8 @@ public class AllServices {
             InputStream inputStream = resource.getInputStream();
             if (inputStream != null) {
                 System.out.println("Good news! inputStream is not null");
+            } else {
+                System.out.println("Oh dear! inputStream is null");
             }
 //            InputStream inputStream = getClass().getResourceAsStream(resource.getFilename());
 //            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
