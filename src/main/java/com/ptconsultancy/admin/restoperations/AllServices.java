@@ -5,16 +5,17 @@ import static com.ptconsultancy.application.ApplicationConstants.SERVICES_RESOUR
 import com.ptconsultancy.domain.utilities.FileUtilities;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.core.io.Resource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
+import org.springframework.util.FileCopyUtils;
 
 @Component
 public class AllServices {
@@ -49,12 +50,13 @@ public class AllServices {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
             System.out.println("In the resource loading part as we are in JAR mode!");
-            Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
-            InputStream inputStream = resource.getInputStream();
-            if (inputStream != null) {
-                System.out.println("Good news! inputStream is not null");
-            } else {
-                System.out.println("Oh dear! inputStream is null");
+            String data = "";
+            ClassPathResource cpr = new ClassPathResource("static/file.txt");
+            try {
+                byte[] bdata = FileCopyUtils.copyToByteArray(cpr.getInputStream());
+                data = new String(bdata, StandardCharsets.UTF_8);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 //            InputStream inputStream = getClass().getResourceAsStream(resource.getFilename());
 //            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
