@@ -58,15 +58,7 @@ public class AllServices {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println(data);
-//            InputStream inputStream = getClass().getResourceAsStream(resource.getFilename());
-//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//            String line = null;
-            int lineCount = 0;
-//            while ((line = bufferedReader.readLine()) != null){
-//                lineCount++;
-//            }
-            return lineCount;
+            return data.split("\n").length;
         }
     }
 
