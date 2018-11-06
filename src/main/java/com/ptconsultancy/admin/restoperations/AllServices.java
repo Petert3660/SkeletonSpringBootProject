@@ -3,9 +3,11 @@ package com.ptconsultancy.admin.restoperations;
 import static com.ptconsultancy.application.ApplicationConstants.SERVICES_RESOURCE_FILE;
 
 import com.ptconsultancy.domain.utilities.FileUtilities;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -48,9 +50,13 @@ public class AllServices {
             return FileUtilities.getFileLengthInLines(SERVICES_RESOURCE_FILE);
         } catch (FileNotFoundException fnf) {
             System.out.println("In the resource loading part as we are in JAR mode!");
-            //Resource resource = resourceLoader.getResource("classpath:" + SERVICES_NAME);
             InputStream inputStream = getClass().getResourceAsStream(SERVICES_NAME);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line = null;
             int lineCount = 0;
+            while ((line = bufferedReader.readLine()) != null){
+                lineCount++;
+            }
             return lineCount;
         }
     }
