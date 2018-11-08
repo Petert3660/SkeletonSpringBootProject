@@ -62,9 +62,9 @@ public class Application implements CommandLineRunner {
         allServices.displayAllServices();
         allServices.addService(service);
         RestOperations restOperations = new RestOperations(allServices);
-        System.out.println("Testing REST operations by running local healthcheck - " + restOperations.getForObject(service, HEALTHCHECK, String.class));
-        System.out.println("Testing REST operations by running local admin get userId - " + restOperations.getForObject(service, GET_ADMIN_ID, String.class));
-        System.out.println("Testing REST operations by running local admin get password - " + restOperations.getForObject(service, GET_ADMIN_PASSWORD, String.class));
+        System.out.println("Testing REST operations by running local healthcheck - " + restOperations.get(service, HEALTHCHECK, String.class));
+        System.out.println("Testing REST operations by running local admin get userId - " + restOperations.get(service, GET_ADMIN_ID, String.class));
+        System.out.println("Testing REST operations by running local admin get password - " + restOperations.get(service, GET_ADMIN_PASSWORD, String.class));
         allServices.removeService("testservice");
     }
 
