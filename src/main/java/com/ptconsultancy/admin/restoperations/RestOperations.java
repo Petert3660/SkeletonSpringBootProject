@@ -30,14 +30,22 @@ public class RestOperations {
 
     public String post(Service service, String endpoint, String body) throws IOException {
         String url = getUrl(service.getName(), endpoint);
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode request = mapper.readTree(body);
-        return restTemplate.postForObject(url, request, String.class);
+        return restTemplate.postForObject(url, createRequest(body), String.class);
     }
 
     public void delete(Service service, String endpoint) throws URISyntaxException {
         URI uri = new URI(getUrl(service.getName(), endpoint));
         restTemplate.delete(uri);
+    }
+
+    public void put(Service service, String endpoint, String body) throws URISyntaxException, IOException {
+        URI uri = new URI(getUrl(service.getName(), endpoint));
+        restTemplate.put(uri, createRequest(body));
+    }
+
+    private JsonNode createRequest(String body) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readTree(body);
     }
 
     private String getSecurityToken(Service service) {
