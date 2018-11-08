@@ -49,8 +49,7 @@ public class RestOperations {
     }
 
     private String getSecurityToken(Service service) {
-        String secureUrl = service.getUrl() + STANDARD_SEPARATOR  + SECURITY_TOKEN;
-        return restTemplate.getForObject(secureUrl, String.class);
+        return restTemplate.getForObject(service.getUrl() + STANDARD_SEPARATOR  + SECURITY_TOKEN, String.class);
     }
 
     private String getUrl(String serviceName, String endpoint) {
