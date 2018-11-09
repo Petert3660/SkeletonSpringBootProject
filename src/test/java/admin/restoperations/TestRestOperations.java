@@ -60,14 +60,4 @@ public class TestRestOperations {
 
         assertThat(response, is(RESPONSE));
     }
-
-    @Test
-    public void test_put() {
-
-    }
-
-    @Test
-    public void test_delete() {
-
-    }
 }
