@@ -16,11 +16,12 @@ public class RestOperations {
 
     private AllServices allServices;
 
-    private RestTemplate restTemplate = new RestTemplate();
+    private RestTemplate restTemplate;
 
     @Autowired
-    public RestOperations(AllServices allServices) {
+    public RestOperations(AllServices allServices, RestTemplate restTemplate) {
         this.allServices = allServices;
+        this.restTemplate = restTemplate;
     }
 
     public <T> T get(Service service, String endpoint, Class<T> responseType) {

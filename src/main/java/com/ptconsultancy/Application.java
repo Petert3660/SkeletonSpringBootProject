@@ -16,6 +16,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.core.env.Environment;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by Peter Thomson on 13/04/2018.
@@ -61,7 +62,7 @@ public class Application implements CommandLineRunner {
             + env.getProperty(SERVER_PORT_PROPERTY));
         allServices.displayAllServices();
         allServices.addService(service);
-        RestOperations restOperations = new RestOperations(allServices);
+        RestOperations restOperations = new RestOperations(allServices, new RestTemplate());
         System.out.println("Testing REST operations by running local healthcheck - " + restOperations.get(service, HEALTHCHECK, String.class));
         System.out.println("Testing REST operations by running local admin get userId - " + restOperations.get(service, GET_ADMIN_ID, String.class));
         System.out.println("Testing REST operations by running local admin get password - " + restOperations.get(service, GET_ADMIN_PASSWORD, String.class));
