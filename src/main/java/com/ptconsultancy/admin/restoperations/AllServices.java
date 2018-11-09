@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,9 @@ public class AllServices {
     private ResourceBundleMessageSource allServicesSource;
 
     @Autowired
-    ResourceLoader resourceLoader;
+    private ResourceLoader resourceLoader;
 
-    Map<String, Service> allServices = new HashMap<String, Service>();
+    private Map<String, Service> allServices = new HashMap<String, Service>();
 
     @Autowired
     public AllServices(ResourceBundleMessageSource allServicesSource, ResourceLoader resourceLoader) throws IOException {
@@ -37,11 +38,8 @@ public class AllServices {
         this.allServicesSource.setBasename(SERVICES_NAME);
         int filelength = getResourceLength();
         for (int i = 1; i <= filelength; i++) {
-            String key = SERVICE + String.valueOf(i);
-            String prop = "";
-            prop = this.allServicesSource.getMessage(key, new Object[]{}, null);
-            Service service = new Service(prop, false);
-            allServices.put(key, service);
+            Service service = new Service(this.allServicesSource.getMessage(SERVICE + String.valueOf(i), null, new Locale("gb_en")), false);
+            allServices.put(SERVICE + String.valueOf(i), service);
         }
     }
 
@@ -63,7 +61,14 @@ public class AllServices {
     }
 
     public void removeService(String serviceName) {
-        allServices.remove(serviceName);
+        Iterator iter = allServices.keySet().iterator();
+        while (iter.hasNext()) {
+            String currentKey = (String) iter.next();
+            if (allServices.get(currentKey).getName().equals(serviceName)) {
+                allServices.remove(currentKey);
+                break;
+            }
+        }
     }
 
     public Service getServiceByName(String serviceName) {

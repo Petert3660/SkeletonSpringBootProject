@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7e206e1-af5e-40a2-9128-4e789fdb1475" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/admin/restoperations/TestRestOperations.java" afterPath="$PROJECT_DIR$/src/test/java/admin/restoperations/TestRestOperations.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/admin/restoperations/TestAllServices.java" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/resourceHashesCache.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/AllServices.java" afterPath="$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/AllServices.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -38,12 +46,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/Application.java">
+      <file leaf-file-name="AllServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/AllServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1176">
-              <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
-              <folding />
+            <state relative-caret-position="840">
+              <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1093#1110#0" expanded="true" />
+                <element signature="e#2183#2184#0" expanded="true" />
+                <element signature="e#2217#2218#0" expanded="true" />
+                <element signature="e#2264#2265#0" expanded="true" />
+                <element signature="e#2323#2324#0" expanded="true" />
+                <element signature="e#2757#2758#0" expanded="true" />
+                <element signature="e#2808#2809#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,22 +68,9 @@
       <file leaf-file-name="ApplicationConstants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/application/ApplicationConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="49" />
+            <state relative-caret-position="84">
+              <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestOperations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/RestOperations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="33" column="66" lean-forward="false" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="66" />
-              <folding>
-                <element signature="e#1971#1972#0" expanded="true" />
-                <element signature="e#2090#2091#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -74,19 +78,21 @@
       <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="237">
               <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestRestOperations.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/admin/restoperations/TestRestOperations.java">
+      <file leaf-file-name="TestAllServices.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/admin/restoperations/TestAllServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
-              <folding />
+            <state relative-caret-position="483">
+              <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -544,10 +550,11 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/ptconsultancy/application/ApplicationConstants.java" />
         <option value="$PROJECT_DIR$/src/main/resources/services.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/AllServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/RestOperations.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ptconsultancy/Application.java" />
         <option value="$PROJECT_DIR$/src/test/java/admin/restoperations/TestRestOperations.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/AllServices.java" />
+        <option value="$PROJECT_DIR$/src/test/java/admin/restoperations/TestAllServices.java" />
       </list>
     </option>
   </component>
@@ -733,7 +740,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestRestOperations">
+  <component name="RunManager" selected="JUnit.TestAllServices">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -754,7 +761,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="TestRestOperations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAllServices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="admin.restoperations.*" />
@@ -765,7 +772,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="admin.restoperations" />
-      <option name="MAIN_CLASS_NAME" value="admin.restoperations.TestRestOperations" />
+      <option name="MAIN_CLASS_NAME" value="admin.restoperations.TestAllServices" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -779,7 +786,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="TestRestOperations.test_get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAllServices.test_add_service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="admin.restoperations.*" />
@@ -790,8 +797,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="admin.restoperations" />
-      <option name="MAIN_CLASS_NAME" value="admin.restoperations.TestRestOperations" />
-      <option name="METHOD_NAME" value="test_get" />
+      <option name="MAIN_CLASS_NAME" value="admin.restoperations.TestAllServices" />
+      <option name="METHOD_NAME" value="test_add_service" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -804,7 +811,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="TestRestOperations.test_post" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAllServices.test_map_contents" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="admin.restoperations.*" />
@@ -815,8 +822,58 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="admin.restoperations" />
-      <option name="MAIN_CLASS_NAME" value="admin.restoperations.TestRestOperations" />
-      <option name="METHOD_NAME" value="test_post" />
+      <option name="MAIN_CLASS_NAME" value="admin.restoperations.TestAllServices" />
+      <option name="METHOD_NAME" value="test_map_contents" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestAllServices.test_map_size" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="admin.restoperations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="SkeletonSpringBootProject_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="admin.restoperations" />
+      <option name="MAIN_CLASS_NAME" value="admin.restoperations.TestAllServices" />
+      <option name="METHOD_NAME" value="test_map_size" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestAllServices.test_remove_service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="admin.restoperations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="SkeletonSpringBootProject_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="admin.restoperations" />
+      <option name="MAIN_CLASS_NAME" value="admin.restoperations.TestAllServices" />
+      <option name="METHOD_NAME" value="test_remove_service" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -856,18 +913,6 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.ptconsultancy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptconsultancy.Application" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <module name="SkeletonSpringBootProject_main" />
-      <envs />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -901,18 +946,20 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Spring Boot.Application" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TestRestOperations.test_get" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestRestOperations.test_post" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestRestOperations" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TestAllServices.test_map_size" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestAllServices.test_map_contents" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestAllServices.test_add_service" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestAllServices.test_remove_service" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestAllServices" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestRestOperations" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestRestOperations.test_post" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestRestOperations.test_get" />
-        <item index="3" class="java.lang.String" itemvalue="Spring Boot.Application" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestAllServices" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestAllServices.test_remove_service" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestAllServices.test_add_service" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestAllServices.test_map_contents" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestAllServices.test_map_size" />
       </list>
     </recent_temporary>
   </component>
@@ -950,44 +997,44 @@
       <workItem from="1541670089561" duration="4896000" />
       <workItem from="1541686928767" duration="592000" />
       <workItem from="1541752298963" duration="3307000" />
-      <workItem from="1541756141747" duration="1243000" />
+      <workItem from="1541756141747" duration="8005000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRestOperations - 2018.11.09 at 09h 56m 29s.xml">
-      <configuration name="TestRestOperations" configurationId="JUnit" />
+    <history-entry file="TestAllServices - 2018.11.09 at 11h 49m 17s.xml">
+      <configuration name="TestAllServices" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 41m 09s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_add_service - 2018.11.09 at 11h 32m 11s.xml">
+      <configuration name="TestAllServices.test_add_service" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 41m 37s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_add_service - 2018.11.09 at 11h 32m 34s.xml">
+      <configuration name="TestAllServices.test_add_service" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 43m 53s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_add_service - 2018.11.09 at 11h 32m 50s.xml">
+      <configuration name="TestAllServices.test_add_service" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 46m 36s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_remove_service - 2018.11.09 at 11h 35m 55s.xml">
+      <configuration name="TestAllServices.test_remove_service" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 48m 47s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_remove_service - 2018.11.09 at 11h 37m 12s.xml">
+      <configuration name="TestAllServices.test_remove_service" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 49m 56s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_remove_service - 2018.11.09 at 11h 44m 24s.xml">
+      <configuration name="TestAllServices.test_remove_service" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 50m 10s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_remove_service - 2018.11.09 at 11h 48m 42s.xml">
+      <configuration name="TestAllServices.test_remove_service" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 53m 20s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_remove_service - 2018.11.09 at 11h 48m 57s.xml">
+      <configuration name="TestAllServices.test_remove_service" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRestOperations_test_post - 2018.11.09 at 09h 53m 28s.xml">
-      <configuration name="TestRestOperations.test_post" configurationId="JUnit" />
+    <history-entry file="TestAllServices_test_remove_service - 2018.11.09 at 11h 49m 06s.xml">
+      <configuration name="TestAllServices.test_remove_service" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48929000" />
+    <option name="totallyTimeSpent" value="55691000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1085" y="-1359" width="2418" height="1318" extended-state="6" />
@@ -1039,12 +1086,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/AllServices.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/admin/restoperations/TestRestOperations.java</url>
           <line>51</line>
           <properties />
@@ -1080,16 +1121,58 @@
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/admin/restoperations/TestAllServices.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/admin/restoperations/TestAllServices.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="10" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>allServices.getAllServices().get(SERVICE1_KEY)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.allServicesSource.getMessage(SERVICE + String.valueOf(i), null, new Locale(&quot;gb_en&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.allServicesSource.getMessage(SERVICE + String.valueOf(i), null, new Locale(&quot;gb_en&quot;))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.allServicesSource.getMessage(SERVICE + String.valueOf(i)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.allServicesSource.getMessage(SERVICE + String.valueOf(i</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>SERVICE + String.valueOf(i)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>PROTOCOL + TEST_SERVICE_NAME + STANDARD_SEPARATOR + SECURITY_TOKEN</expression-string>
         <language-id>JAVA</language-id>
@@ -1105,67 +1188,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>service.getUrl()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>url + STANDARD_SEPARATOR + getSecurityToken(service)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>service.getUrl() + STANDARD_SEPARATOR  + SECURITY_TOKEN</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>PROTOCOL + TEST_SERVICE_NAME + STANDARD_SEPARATOR +
-            TEST_ENDPOINT + STANDARD_SEPARATOR + SECURITY_TOKEN</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/messages/MessageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/MvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/test" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/auth.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -1316,13 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="324" column="11" lean-forward="false" selection-start-line="324" selection-start-column="11" selection-end-line="324" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/auth.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1402,33 +1420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/AllServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="30" column="70" lean-forward="false" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1052#1069#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
-            <element signature="e#2232#2233#0" expanded="true" />
-            <element signature="e#2279#2280#0" expanded="true" />
-            <element signature="e#2338#2339#0" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2497#2498#0" expanded="true" />
-            <element signature="e#2548#2549#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/admin/test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -1436,26 +1427,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/application/ApplicationConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.powermock/powermock-api-mockito2/1.7.0RC2/ed9b86a8c72e0679b3d76ffb533462aef7af1fe1/powermock-api-mockito2-1.7.0RC2-sources.jar!/org/powermock/api/mockito/repackaged/MethodInterceptorFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1472,9 +1447,17 @@
         <state relative-caret-position="483">
           <caret line="33" column="66" lean-forward="false" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="66" />
           <folding>
-            <element signature="e#1971#1972#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#1971#1972#0" expanded="false" />
+            <element signature="e#2090#2091#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1483,6 +1466,97 @@
         <state relative-caret-position="523">
           <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/MethodRoadie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.7.RELEASE/1df04db0df0da0b7113ef663fa7a0c8dfddc7e36/spring-context-5.0.7.RELEASE-sources.jar!/org/springframework/context/support/AbstractMessageSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="151" column="24" lean-forward="false" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/TestMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.powermock/powermock-core/1.7.0RC2/2ce1bba1a1902fefa0772a87d066bc19ecce8c87/powermock-core-1.7.0RC2-sources.jar!/org/powermock/core/MockGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.powermock/powermock-module-junit4/1.7.0RC2/2d723ae0e56dc24f567ec47623bc2ffe1b4b2aa1/powermock-module-junit4-1.7.0RC2-sources.jar!/org/powermock/modules/junit4/internal/impl/PowerMockJUnit44RunnerDelegateImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="314" column="0" lean-forward="false" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="211" column="6" lean-forward="false" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/application/ApplicationConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ptconsultancy/admin/restoperations/AllServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1093#1110#0" expanded="true" />
+            <element signature="e#2183#2184#0" expanded="true" />
+            <element signature="e#2217#2218#0" expanded="true" />
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#2323#2324#0" expanded="true" />
+            <element signature="e#2757#2758#0" expanded="true" />
+            <element signature="e#2808#2809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/admin/restoperations/TestAllServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
