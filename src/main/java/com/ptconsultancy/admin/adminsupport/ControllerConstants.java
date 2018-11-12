@@ -8,4 +8,9 @@ public class ControllerConstants {
     public static final int TOKEN_LENGTH = 20;
     public static final int TOKEN_MODE = 1;
     public static final String NO_TOKEN_MESSAGE = "Cannot issue a new token";
+    public static final String DEFAULT_HEALTHCHECK_MESSAGE = "Application is running OK";
+
+    public static String getHealthCheckMessage(String version) {
+        return version + " is running OK";
+    }
 }

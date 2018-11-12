@@ -1,5 +1,8 @@
 package com.ptconsultancy.admin.restcontrollers;
 
+import static com.ptconsultancy.admin.adminsupport.ControllerConstants.DEFAULT_HEALTHCHECK_MESSAGE;
+import static com.ptconsultancy.admin.adminsupport.ControllerConstants.getHealthCheckMessage;
+
 import com.ptconsultancy.admin.adminsupport.BuildVersion;
 import com.ptconsultancy.admin.adminsupport.ControllerConstants;
 import com.ptconsultancy.admin.security.SecurityTokenManager;
@@ -49,9 +52,9 @@ public class AdminController {
     @RequestMapping(path="/healthcheck", method=RequestMethod.GET)
     public String healthcheck() {
         if (BuildVersion.getProjectTitle() != null) {
-            return BuildVersion.getProjectTitle() + " is running OK";
+            return getHealthCheckMessage(BuildVersion.getProjectTitle());
         } else {
-            return "Application is running OK";
+            return DEFAULT_HEALTHCHECK_MESSAGE;
         }
     }
 
