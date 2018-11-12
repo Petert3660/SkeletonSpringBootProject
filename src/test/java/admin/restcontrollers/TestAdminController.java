@@ -37,12 +37,7 @@ public class TestAdminController {
     @Test
     public void shouldRespondOkForHealthcheck() throws Exception {
         getAssignmentRequest(HEALTHCHECK)
-            .andExpect(status().isOk());
-    }
-
-    @Test
-    public void shouldRespondWithHealthcheckDefaultMessage() throws Exception {
-        getAssignmentRequest(HEALTHCHECK)
+            .andExpect(status().isOk())
             .andExpect(content().string  (DEFAULT_HEALTHCHECK_MESSAGE));
     }
 
@@ -55,12 +50,14 @@ public class TestAdminController {
     @Test
     public void shouldRespondNoTokenMessageForGetId() throws Exception {
         getAssignmentRequest(GET_ADMIN_ID + STANDARD_SEPARATOR + TEST_SECURITY_TOKEN)
+            .andExpect(status().isOk())
             .andExpect(content().string(NO_TOKEN_MESSAGE));
     }
 
     @Test
     public void shouldRespondNoTokenMessageForGetPassword() throws Exception {
         getAssignmentRequest(GET_ADMIN_PASSWORD + STANDARD_SEPARATOR + TEST_SECURITY_TOKEN)
+            .andExpect(status().isOk())
             .andExpect(content().string(NO_TOKEN_MESSAGE));
     }
 
