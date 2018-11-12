@@ -53,7 +53,11 @@ public class Application implements CommandLineRunner {
         System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         outputMessage();
         populateDatabase();
-        testRestOperations();
+        /* Running this will break the AdminController test,
+         * so only run when starting up to test REST endpoints,
+         * then comment out or remove.
+         */
+        //testRestOperations();
     }
 
     private void testRestOperations() {
