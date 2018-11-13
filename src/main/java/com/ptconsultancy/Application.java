@@ -60,7 +60,6 @@ public class Application implements CommandLineRunner {
     }
 
     private void testRestOperations() {
-        System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         Service service = new Service("\\testservice", true);
         service.setUrl(env.getProperty(SERVER_HOST) + ":"
             + env.getProperty(SERVER_PORT_PROPERTY));
@@ -74,6 +73,7 @@ public class Application implements CommandLineRunner {
     }
 
     private void outputMessage() {
+        System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         String hostname = env.getProperty(SERVER_HOST) + ":";
         String serverPort = env.getProperty(SERVER_PORT_PROPERTY);
         System.out.println("************************************************************************");
