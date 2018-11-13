@@ -50,7 +50,6 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         outputMessage();
         populateDatabase();
         /* Running this will break the AdminController test,
@@ -61,6 +60,7 @@ public class Application implements CommandLineRunner {
     }
 
     private void testRestOperations() {
+        System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         Service service = new Service("\\testservice", true);
         service.setUrl(env.getProperty(SERVER_HOST) + ":"
             + env.getProperty(SERVER_PORT_PROPERTY));
