@@ -73,6 +73,7 @@ public class Application implements CommandLineRunner {
     }
 
     private void outputMessage() {
+        System.out.println("************************************************************************");
         System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         String hostname = env.getProperty(SERVER_HOST) + ":";
         String serverPort = env.getProperty(SERVER_PORT_PROPERTY);
