@@ -15,20 +15,12 @@ public class MessageHandler {
     }
 
     public String getMessage(String key) {
-
-        String sources[] = key.split("\\.");
-        String source = sources[0];
-
-        setMessageSourceSource(source);
+        setMessageSourceSource(key.split("\\.")[0]);
         return messageSource.getMessage(key, null, null);
     }
 
     public String getMessage(String key, String[] params) {
-
-        String sources[] = key.split("\\.");
-        String source = sources[0];
-
-        setMessageSourceSource(source);
+        setMessageSourceSource(key.split("\\.")[0]);
         Object[] args = params;
         return messageSource.getMessage(key, args, null);
     }
