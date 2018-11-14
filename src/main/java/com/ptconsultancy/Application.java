@@ -52,7 +52,7 @@ public class Application implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         outputMessage();
         populateDatabase();
-        /* Running this will break the AdminController test,
+        /* Running this will break the AdminController tests,
          * so only run when starting up to test REST endpoints,
          * then comment out or remove.
          */
