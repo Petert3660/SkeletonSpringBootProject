@@ -3,6 +3,7 @@ package com.ptconsultancy;
 import static com.ptconsultancy.application.ApplicationConstants.GET_ADMIN_ID;
 import static com.ptconsultancy.application.ApplicationConstants.GET_ADMIN_PASSWORD;
 import static com.ptconsultancy.application.ApplicationConstants.HEALTHCHECK;
+import static com.ptconsultancy.application.ApplicationConstants.STANDARD_DELIMITER;
 
 import com.ptconsultancy.admin.adminsupport.BuildVersion;
 import com.ptconsultancy.admin.restoperations.AllServices;
@@ -73,21 +74,21 @@ public class Application implements CommandLineRunner {
     }
 
     private void outputMessage() {
-        System.out.println("************************************************************************");
+        System.out.println(STANDARD_DELIMITER);
         System.out.println(messageHandler.getMessage("messages.ptconsultancy.messages"));
         String hostname = env.getProperty(SERVER_HOST) + ":";
         String serverPort = env.getProperty(SERVER_PORT_PROPERTY);
-        System.out.println("************************************************************************");
+        System.out.println(STANDARD_DELIMITER);
         if (BuildVersion.getProjectTitle() != null && BuildVersion.getBuildVersion() != null) {
             System.out.println("* " + BuildVersion.getProjectTitle() + ", Version: " + BuildVersion.getBuildVersion());
-            System.out.println("************************************************************************");
+            System.out.println(STANDARD_DELIMITER);
         }
         if (BuildVersion.getProjectTitle() != null) {
             System.out.println("* " + BuildVersion.getProjectTitle() + " is now running on:- " + hostname + serverPort);
         } else {
             System.out.println("* This application is now running on:- " + hostname + serverPort);
         }
-        System.out.println("************************************************************************");
+        System.out.println(STANDARD_DELIMITER);
     }
 
     // Use this method to set up test data from the application.properties file

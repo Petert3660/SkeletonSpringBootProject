@@ -11,4 +11,6 @@ public class ApplicationConstants {
 
     public static final String GET_ADMIN_ID = "getadminid";
     public static final String GET_ADMIN_PASSWORD = "getadminpass";
+
+    public static final String STANDARD_DELIMITER = "************************************************************************";
 }
